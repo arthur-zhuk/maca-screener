@@ -22,7 +22,7 @@ NextJS was used as the rendering framework as it provides the ultimate React dev
 
 index.tsx is essentially the Home component in this example. Here multiple components are abstracted away into their own files. This helps with legibility and seperates concerns. There are a small amount of tradeoffs by doing this in this example. One of those trade offs is the React state getters and setters need to be passed as props into these components. If they lived in one file then they could be immediately accessed.
 
-Comments are made to help quickly communicate what the tailwind syntax is accomplishing with it's styling.
+Comments are made to help quickly communicate what the tailwind syntax is accomplishing with it's styling. Writing CSS from scratch is a tradeoff that should be made with paying for and using a component library such as TailwindUI during the early to mid stage of a company's journey.
 
 The CardGallery component is a completely responsive layout that fits enough cards on the page while make it pleasant to the user. If the side panel is opened the layout wraps cards that don't fit down a row. Cards have different lengths of content and preserve their structure making keeping the design appealing.
 
