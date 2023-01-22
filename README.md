@@ -14,25 +14,16 @@ pnpm dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+### Technical Decisions for Screener
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+NextJS was used as the rendering framework as it provides the ultimate React development experience as well as it's intuitive optimizations with server side rendering. Create-React-App SPA model has been phased out as users now expect more performance squeezed out of web apps than ever before and the SPA approach of bundling, caching, and fetching data is outdone by Next.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+index.tsx is essentially the Home component in this example. Here multiple components are abstracted away into their own files. This helps with legibility and seperates concerns. There are a small amount of tradeoffs by doing this in this example. One of those trade offs is the React state getters and setters need to be passed as props into these components. If they lived in one file then they could be immediately accessed.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+Comments are made to help quickly communicate what the tailwind syntax is accomplishing with it's styling.
 
-## Learn More
+The CardGallery component is a completely responsive layout that fits enough cards on the page while make it pleasant to the user. If the side panel is opened the layout wraps cards that don't fit down a row. Cards have different lengths of content and preserve their structure making keeping the design appealing.
 
-To learn more about Next.js, take a look at the following resources:
+The Toggle component displays styling accomplished with vanilla Tailwind. It also demonstrates the ability to change the styling on that component dynamically leveraging React state and template literals on the className prop.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+A few unit test assertions were written demonstrating the light weight approach to testing UI without the need of resource intensive and brittle solutions like end to end testing with Cypress. These tests interact with the UI changing the state of the DOM and asserting values are as they're expected to be.
