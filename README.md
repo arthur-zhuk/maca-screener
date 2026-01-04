@@ -1,31 +1,48 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# MACA Screener
 
-## Getting Started
+![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
+![Next.js](https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white)
+![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
 
-First, run the development server:
+Screening application built with Next.js and TypeScript for analyzing and filtering data.
+
+## Features
+
+- **Data Screening**: Analyze and filter datasets
+- **Modern Stack**: Built with Next.js and TypeScript
+- **Type Safety**: Full TypeScript implementation
+- **Responsive Design**: Optimized for all screen sizes
+
+## Tech Stack
+
+- **Framework**: Next.js
+- **Language**: TypeScript
+- **UI**: React
+
+## Installation
+
+```bash
+git clone https://github.com/arthur-zhuk/maca-screener.git
+cd maca-screener
+npm install
+```
+
+## Usage
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) to see the application.
 
-### Technical Decisions for Screener
+## Development
 
-The app was written with TypeScript and React. TypeScript ensures bugs are caught at compile time with it's type safety. It also allows the app to scale more fluidily as the codebase grows due to rich type definitions reducing developer error and much more.
+```bash
+npm run dev    # Start development server
+npm run build  # Build for production
+npm start      # Start production server
+```
 
-NextJS was used as the rendering framework as it provides the ultimate React development experience as well as it's intuitive optimizations with server side rendering. Create-React-App SPA model has been phased out as users now expect more performance squeezed out of web apps than ever before and the SPA approach of bundling, caching, and fetching data is outdone by Next. With Next it's straight forward to deploy and even host domains all in one managed service freeing developer resources up to focus on what's important which is building the product, not doing DevOps.
+## License
 
-index.tsx is essentially the Home component in this example. Here multiple components are abstracted away into their own files. This helps with legibility and seperates concerns. There are a small amount of tradeoffs by doing this in this example. One of those trade offs is the React state getters and setters need to be passed as props into these components. If they lived in one file then they could be immediately accessed.
-
-Comments are made to help quickly communicate what the tailwind syntax is accomplishing with it's styling. Writing CSS from scratch is a tradeoff that should be made with paying for and using a component library such as TailwindUI during the early to mid stage of a company's journey.
-
-The CardGallery component is a completely responsive layout that fits enough cards on the page while make it pleasant to the user. If the side panel is opened the layout wraps cards that don't fit down a row. Cards have different lengths of content and preserve their structure making keeping the design appealing.
-
-The Toggle component displays styling accomplished with vanilla Tailwind. It also demonstrates the ability to change the styling on that component dynamically leveraging React state and template literals on the className prop.
-
-A few unit test assertions were written demonstrating the light weight approach to testing UI without the need of resource intensive and brittle solutions like end to end testing with Cypress. These tests interact with the UI changing the state of the DOM and asserting values are as they're expected to be.
+MIT
